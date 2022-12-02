@@ -1,0 +1,124 @@
+//<FORM>
+// Снипет (HTML):
+.form {
+	// .form__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+
+	// .form__item
+	&__item {
+		margin-bottom: rem(32);
+		display: grid;
+		row-gap: rem(16);
+	}
+
+	// .form__label
+	&__label {
+		display: block;
+	}
+	label.form__label {
+		cursor: pointer;
+	}
+
+	// .form__input
+	&__input {
+		// .form__input_phone
+		&_phone {
+		}
+	}
+
+	// .form__submit
+	&__submit {
+		border-radius: $border-radius;
+		position: relative;
+
+		&::after {
+			content: attr(data-content);
+		}
+
+		input {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: transparent;
+			z-index: 2;
+			font-size: 0;
+			cursor: pointer;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					transform: translate(-50%, 50%) scale(10) !important;
+				}
+
+				.btn {
+					color: $White;
+				}
+			}
+		}
+
+		.btn {
+			position: relative;
+			z-index: 2;
+			width: 100%;
+		}
+	}
+
+	// .form__privacy
+	&__privacy {
+		font-size: rem(14);
+		line-height: math.div(18, 14);
+		color: $Grey;
+		
+		&:not(:first-child) {
+			margin-top: rem(8);
+		}
+	}
+}
+//</FORM>
+
+// <BUTTONS>
+// Снипет (HTML): btn
+@import "button";
+
+// <INPUTS>
+// Снипет (HTML): inp
+@import "input";
+
+// <CHECK>
+// Снипет (HTML): chk
+@import "checkbox";
+
+// <RADIO>
+// Снипет (HTML): opt
+// @import "radio";
+
+// <SELECT>
+// Снипет (HTML): sel
+@import "select";
+
+// <RATING>
+// Снипет (HTML): rating
+// @import "rating";
+
+// <QUANTITY>
+// Снипет (HTML): qa
+// @import "quantity";
+
+// <RANGE>
+// Снипет (HTML):
+// @import "range";
+
+// <CALENDAR>
+// Снипет (HTML):
+// @import "datepicker";
+
+// <COLS>
+// Снипет (HTML):
+@import "col";

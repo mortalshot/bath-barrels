@@ -1,0 +1,80 @@
+// Базовые стили спойлеров
+// Сниппет (HTML): spoller
+
+.spollers {
+	display: grid;
+	row-gap: rem(10);
+
+	// .spollers__item
+	&__item {
+		background-color: $White;
+		border-radius: $border-radius;
+		border: rem(1) solid transparent;
+
+		@media (any-hover: hover) {
+			transition: $transition ease border-color 0s;
+			
+			&:hover {
+				border-color: $LGrey;
+			}
+		}
+	}
+
+	// .spollers__title
+	&__title {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 22, 16);
+		line-height: math.div(29, 22);
+		cursor: default;
+		width: 100%;
+		text-align: left;
+		position: relative;
+		@include adaptiveValue("padding", 30, 16);
+		border-radius: $border-radius;
+
+		._spoller-init & {
+			cursor: pointer;
+
+			span {
+				display: block;
+				padding-right: rem(30);
+			}
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				@include adaptiveValue("right", 30, 16);
+				top: 50%;
+				background-color: $mainColor;
+				height: 1.5px;
+				width: 7px;
+				transition: transform 0.5s ease 0s;
+			}
+
+			&::before {
+				transform: translate(-75%, -50%) rotate(40deg);
+			}
+
+			&::after {
+				transform: translate(0, -50%) rotate(-40deg);
+			}
+
+			&._spoller-active {
+				&::before {
+					transform: translateX(-75%) rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+		}
+	}
+
+	// .spollers__body
+	&__body {
+		@include adaptiveValue("padding-left", 30, 16);
+		@include adaptiveValue("padding-right", 30, 16);
+		@include adaptiveValue("padding-bottom", 30, 16);
+	}
+}

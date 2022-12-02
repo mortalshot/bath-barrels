@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="banner">
+				<div class="banner__container">
+					<div class="banner__main main-banner">
+						<img src="@img/home/home-banner.jpg" alt="" class="main-banner__bg">
+
+						<div class="main-banner__wrapper">
+							<div class="main-banner__body">
+								<div class="main-banner__text _content">
+									<h1>Уютные и тёплые Бани-бочки от производителя</h1>
+								</div>
+								<div class="main-banner__button"> <button type="button" class=" btn btn_green _hover-white" data-popup="#request"><span>Заказать рассчёт</span></button> </div>
+							</div>
+
+							<div class="main-banner__location location-banner">
+								<img src="@img/home/location-banner.svg" alt="" loading="lazy">
+
+								<div class="location-banner__body">
+									<div class="location-banner__caption">Мы находимся</div>
+									<div class="location-banner__text">г. хабаровск <br> ул. шкотова 22</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="banner__features features-banner">
+						<div class="features-banner__item">
+							<img src="@img/home/features-banner-1-1.svg" alt="" loading="lazy">
+							<span>Качественная баня без долгостроя</span>
+						</div>
+						<div class="features-banner__item">
+							<img src="@img/home/features-banner-1-2.svg" alt="" loading="lazy">
+							<span>Прогрев за 30 минут</span>
+						</div>
+						<div class="features-banner__item">
+							<img src="@img/home/features-banner-1-3.svg" alt="" loading="lazy">
+							<span>Технология лучше каркасной</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="categories-widget">
+				<div class="categories-widget__container">
+					<div class="categories-widget__heading _content">
+						<h2>Наша продукция</h2>
+					</div>
+
+					<div class="categories-widget__list">
+						<div class="categories-widget__item category-item">
+							<div class="category-item__wrapper">
+								<div class="category-item__img"><img src="@img/products/category-1.jpg" alt="" loading="lazy"></div>
+								<a href="category.html" class="category-item__link _hover-black"><span>Круглые бани</span></a>
+							</div>
+						</div>
+						<div class="categories-widget__item category-item">
+							<div class="category-item__wrapper">
+								<div class="category-item__img"><img src="@img/products/category-2.jpg" alt="" loading="lazy"></div>
+								<a href="category.html" class="category-item__link _hover-black"><span>Квадро бани</span></a>
+							</div>
+						</div>
+						<div class="categories-widget__item category-item">
+							<div class="category-item__wrapper">
+								<div class="category-item__img"><img src="@img/products/category-3.jpg" alt="" loading="lazy"></div>
+								<a href="category.html" class="category-item__link _hover-black"><span>Окта бани</span></a>
+							</div>
+						</div>
+						<div class="categories-widget__item category-item">
+							<div class="category-item__wrapper">
+								<div class="category-item__img"><img src="@img/products/category-4.jpg" alt="" loading="lazy"></div>
+								<a href="category.html" class="category-item__link _hover-black"><span>Вместительные бани</span></a>
+							</div>
+						</div>
+						<div class="categories-widget__item category-item">
+							<div class="category-item__wrapper">
+								<div class="category-item__img"><img src="@img/products/category-5.jpg" alt="" loading="lazy"></div>
+								<a href="category.html" class="category-item__link _hover-black"><span>Купели</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="information">
+				<div class="information__container">
+					<div class="information__heading _content">
+						<h2>Узнайте больше о банях бочках</h2>
+					</div>
+
+					<div data-tabs data-tabs-animate class="information__tabs tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="submit" class="information__title _icon-info tabs__title _tab-active">О бане бочке</button>
+							<button type="submit" class="information__title _icon-snowflake tabs__title">баня бочка зимой</button>
+							<button type="submit" class="information__title _icon-order tabs__title">заказ и доставка</button>
+							<button type="submit" class="information__title _icon-cube tabs__title">устройство бани бочки</button>
+							<button type="submit" class="information__title _icon-tool tabs__title">сборка</button>
+							<button type="submit" class="information__title _icon-crown tabs__title">преимущества</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								<div class="information__template information-template information-template_first">
+									<div class="information-template__column">
+										<div class="information-template__image">
+											<img src="@img/home/information-template-1-1.jpg" alt="" loading="lazy">
+										</div>
+
+										<div class="information-template__card">
+											<div class="information-template__wrapper">
+												<div class="information-template__count">01</div>
+												<div class="information-template__text _content">
+													<p>Баня бочка - это инновационный продукт для тех, кто хочет получить полноценную баню за короткие сроки и без лишней головной боли</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">02</div>
+											<div class="information-template__text _content">
+												<p>Без фундамента, без строительства баня-бочка устанавливается за один день и сразу готова к использованию</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">03</div>
+											<div class="information-template__text _content">
+												<p>Баня бочка изготавливается из еловой или кедровой древесины</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">04</div>
+											<div class="information-template__text _content">
+												<p>Эффективная форма бани-бочки, бондарная технология и избыточная мощность печи позволят прогреть парилку до 120°С самой холодной зимой</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">05</div>
+											<div class="information-template__text _content">
+												<p>Баня бочка абсолютно экологична и безопасна. При производстве используются только натуральные материалы</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="information__template information-template information-template_second">
+									<div class="information-template__image">
+										<img src="@img/home/information-template-1-2.jpg" alt="" loading="lazy">
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">01</div>
+											<div class="information-template__text _content">
+												<p>Баня бочка предназначена для использования в зимний период и не требует дополнительного утепления</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">02</div>
+											<div class="information-template__text _content">
+												<p>Высокая температура в парилке зимой достигается за счет эффективной формы, бондарной технологии и избыточной мощности печи</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">03</div>
+											<div class="information-template__text _content">
+												<p>При прогретой печи и пустой топке при наружной температуре воздуха -25°С температура в парилке падает на 10°С за 40 минут</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">04</div>
+											<div class="information-template__text _content">
+												<p>Эффективная форма бани-бочки, бондарная технология и избыточная мощность печи позволят прогреть парилку до 120°С самой холодной зимой</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="information__template information-template information-template_second">
+									<div class="information-template__image">
+										<img src="@img/home/information-template-1-3.jpg" alt="" loading="lazy">
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">01</div>
+											<div class="information-template__text _content">
+												<p>Баня бочка доставляется и устанавливается на участок в готовом виде с помощью крана манипулятора.</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">02</div>
+											<div class="information-template__text _content">
+												<p>Точно к назначенному времени. Дата и время поставки согласуется заранее и не изменяется</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card" style="grid-column: span 2;">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">03</div>
+											<div class="information-template__text _content">
+												<p>Срок поставки бани бочки не более 60 рабочих дней. На выставочных площадках имеются готовые бани</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="information__template information-template information-template_third">
+									<div class="information-template__column">
+										<div class="information-template__card">
+											<div class="information-template__wrapper">
+												<div class="information-template__count">01</div>
+												<div class="information-template__text _content">
+													<p>Конструкция бани бочки проста и эффективна. Баня изготавливается из еловой или кедровой доски толщиной 42 мм и не требует утепления</p>
+												</div>
+											</div>
+										</div>
+										<div class="information-template__image">
+											<img src="@img/home/information-template-1-4.jpg" alt="" loading="lazy">
+										</div>
+									</div>
+									<div class="information-template__column">
+										<div class="information-template__card">
+											<div class="information-template__wrapper">
+												<div class="information-template__count">02</div>
+												<div class="information-template__text _content">
+													<p>В производство допускается доска с влажностью 8-10%, что позволяет практически исключить рассыхание изделия даже в самый засушливый период</p>
+												</div>
+											</div>
+										</div>
+										<div class="information-template__image">
+											<img src="@img/home/information-template-1-5.jpg" alt="" loading="lazy">
+										</div>
+									</div>
+									<div class="information-template__column">
+										<div class="information-template__card">
+											<div class="information-template__wrapper">
+												<div class="information-template__count">03</div>
+												<div class="information-template__text _content">
+													<p>Прогрев печи до 100°С в летний период занимает 30 минут, в зимний период 1 час</p>
+												</div>
+											</div>
+										</div>
+										<div class="information-template__image">
+											<img src="@img/home/information-template-1-6.jpg" alt="" loading="lazy">
+										</div>
+									</div>
+									<div class="information-template__column">
+										<div class="information-template__card">
+											<div class="information-template__wrapper">
+												<div class="information-template__count">04</div>
+												<div class="information-template__text _content">
+													<p>Для слива воды в каждом помещении предусмотрены сливные отверстия в нижней доске</p>
+												</div>
+											</div>
+										</div>
+										<div class="information-template__image">
+											<img src="@img/home/information-template-1-7.jpg" alt="" loading="lazy">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="information__template information-template information-template_second">
+									<div class="information-template__image">
+										<img src="@img/home/information-template-1-8.jpg" alt="" loading="lazy">
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">01</div>
+											<div class="information-template__text _content">
+												<p>Наши высококвалифицированные специалисты соберут баню-бочку у Вас на участке, если к месту установки не может подъехать кран-манипулятор</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">02</div>
+											<div class="information-template__text _content">
+												<p>Баня-бочка собирается за 6-12 часов, качество такой сборки не будет отличаться от цеховой сборки</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card" style="grid-column: span 2;">
+										<div class="information-template__wrapper">
+											<div class="information-template__count">03</div>
+											<div class="information-template__text _content">
+												<p>Наши специалисты после сборки оставят Ваш участок в первозданном виде: весь строительный мусор будет убран, и к вечеру Вы сможете париться!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="information__template information-template information-template_fourth">
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Разумные цены</h4>
+												<p>У производителя нет необходимости в дополнительных наценках на бани-бочки</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Лечебные свойста</h4>
+												<p>Кедр выделяет летучие вещества, которые выполняют защитную функцию для здоровья человека</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Долговечность</h4>
+												<p>Кедр практически не поддаётся гниению, потому что он влагоустойчив</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Нет плесени</h4>
+												<p>Благодаря технологии изготавления, исключается возникновение плесени и грибков</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Не пропускает тепло</h4>
+												<p>Баня хорошо переносит перепады температур, а так же долго сохраняет тепло</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Красивый внешний вид</h4>
+												<p>Имеет привлекательный внешний вид благодаря уникальному строению древесины</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Быстрая установка</h4>
+												<p>Для возведения сооружения понадобится несколько дней и всего пару человек</p>
+											</div>
+										</div>
+									</div>
+									<div class="information-template__card">
+										<div class="information-template__wrapper">
+											<div class="information-template__icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+											<div class="information-template__text _content">
+												<h4>Небольшие габариты</h4>
+												<p>Баня-бочка, благодаря своей компактности, может быть установлена где угодно</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="features">
+				<div class="features__container">
+					<div class="features__main">
+						<div class="features__heading _content">
+							<h2>преимущества</h2>
+						</div>
+
+						<div class="features__list">
+							<div class="features__item features-item">
+								<div class="features-item__icon"><img src="@img/home/features-item-1.svg" alt="" loading="lazy"></div>
+								<div class="features-item__text">
+									<h4>Экологичность</h4>
+									<p>При изготовлении используются только качественные и безопасные материалы!</p>
+								</div>
+							</div>
+							<div class="features__item features-item">
+								<div class="features-item__icon"><img src="@img/home/features-item-2.svg" alt="" loading="lazy"></div>
+								<div class="features-item__text">
+									<h4>Абсолютная мобильность</h4>
+									<p>Вы можете взять с собой баню-бочку, куда бы вы не отправились.</p>
+								</div>
+							</div>
+							<div class="features__item features-item">
+								<div class="features-item__icon"><img src="@img/home/features-item-3.svg" alt="" loading="lazy"></div>
+								<div class="features-item__text">
+									<h4>Не требует электричества</h4>
+									<p>Нагревается от дровяной печи и радует здоровым и ароматным паром!</p>
+								</div>
+							</div>
+							<div class="features__item features-item">
+								<div class="features-item__icon"><img src="@img/home/features-item-4.svg" alt="" loading="lazy"></div>
+								<div class="features-item__text">
+									<h4>Оригинальная форма</h4>
+									<p>Не только хорошо выглядит но и быстро нагревает помещение и экономит дрова.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="features__image"><img src="@img/home/features-image-1.svg" alt="" loading="lazy"></div>
+				</div>
+			</section>
+
+			<section class="manufacturers">
+				<div class="manufacturers__container">
+					<div class="manufacturers__heading">
+						<h2 class="manufacturers__title">Мы прямые производители</h2>
+						<div class="swiper__arrows">
+							<button class="swiper__arrow swiper__arrow_left _hover-green"><i class="_icon-arrow"></i></button>
+							<button class="swiper__arrow swiper__arrow_right _hover-green"><i class="_icon-arrow"></i></button>
+						</div>
+					</div>
+
+					<div class="manufacturers__row">
+						<div class="manufacturers__slider swiper">
+							<div class="manufacturers__wrapper swiper-wrapper" data-gallery>
+								<div data-src="@img/home/manufacturers-1-1.jpg" class="manufacturers__slide swiper-slide"><img src="@img/home/manufacturers-1-1.jpg" alt="" loading="lazy"></div>
+								<div data-src="@img/home/manufacturers-1-2.jpg" class="manufacturers__slide swiper-slide"><img src="@img/home/manufacturers-1-2.jpg" alt="" loading="lazy"></div>
+								<div data-src="@img/home/manufacturers-1-3.jpg" class="manufacturers__slide swiper-slide"><img src="@img/home/manufacturers-1-3.jpg" alt="" loading="lazy"></div>
+								<div data-src="@img/home/manufacturers-1-4.jpg" class="manufacturers__slide swiper-slide"><img src="@img/home/manufacturers-1-4.jpg" alt="" loading="lazy"></div>
+								<div data-src="@img/home/manufacturers-1-5.jpg" class="manufacturers__slide swiper-slide"><img src="@img/home/manufacturers-1-5.jpg" alt="" loading="lazy"></div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="manufacturers__body">
+							<div class="manufacturers__text _content">
+								<p>За счет собственного производства не устанавливаем высокие необоснованные цены, поскольку работаем напрямую без посредников</p>
+							</div>
+							<div class="manufacturers__features">
+								<div class="manufacturers-feature">
+									<div class="manufacturers-feature__val">30</div>
+									<div class="manufacturers-feature__text">Бань строим в месяц</div>
+								</div>
+								<div class="manufacturers-feature">
+									<div class="manufacturers-feature__val">10</div>
+									<div class="manufacturers-feature__text">Лет успешно работаем </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="template6">
+				<div class="template6__container">
+					<div class="template6__heading _content">
+						<h2>Качественная <br> сборка</h2>
+					</div>
+
+					<div class="template6__items">
+						<div class="template6__item">
+							<img src="@img/home/template6-1.jpg" alt="" class="template6__item-bg">
+							<div class="title-h4">Качественные материалы</div>
+						</div>
+						<div class="template6__item">
+							<img src="@img/home/template6-2.jpg" alt="" class="template6__item-bg">
+							<div class="title-h4">Отсутствие щелей</div>
+						</div>
+						<div class="template6__item">
+							<img src="@img/home/template6-3.jpg" alt="" class="template6__item-bg">
+							<div class="title-h4">Гарантия качества 5 лет </div>
+						</div>
+					</div>
+
+					<div class="template6__row">
+						<div class="template6__blank"></div>
+						<div class="template6__main">
+							<div class="template6__accent">Пользуйтесь баней бочкой круглый год, благодаря паро и теплоизоляции</div>
+
+							<div class="template6__features">
+								<div class="template6__feature">
+									<div class="template6__feature-icon"><img src="@img/home/template6__feature-icon-1.svg" alt="" loading="lazy"></div>
+									<div class="template6__feature-text _content">
+										<h4>Скорость</h4>
+										<p>Баня нагревается всего за 30 минут</p>
+									</div>
+								</div>
+								<div class="template6__feature">
+									<div class="template6__feature-icon"><img src="@img/home/template6__feature-icon-2.svg" alt="" loading="lazy"></div>
+									<div class="template6__feature-text _content">
+										<h4>Экономия</h4>
+										<p>7-9 поленьев нужнодля растопки</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="template7">
+				<div class="template7__container">
+					<div class="template7__wrapper">
+						<div class="template7__main">
+							<div class="template7__body">
+								<h2 class="template7__title">Наши бани <span>можно</span> возить с собой</h2>
+								<div class="template7__text _content">
+									<p>Для тех, кто любит активный отдых на свежем воздухе, для кого рыбалка или охота – это образ жизни, кто активен, мобилен, а так же любит и ценит комфорт. </p>
+								</div>
+							</div>
+							<div class="template7__button"><button type="button" data-popup="#request" class="btn btn_green _hover-black"><span>Рассчитать стоимость</span></button></div>
+						</div>
+						<div class="template7__image"><img src="@img/home/template7-1.jpg" alt="" loading="lazy"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="template8">
+				<div class="template8__container">
+					<h2 class="template8__title">
+						Изготовим баню
+						<span>за <span style="color:#3DB36C">2</span> дня</span>
+					</h2>
+					<div class="template8__image"><img src="@img/home/template8-1.png" alt="" loading="lazy"></div>
+				</div>
+			</section>
+
+			<section class="steps">
+				<div class="steps__container">
+					<div data-tabs="767.98" data-tabs-animate="" class="steps__tabs tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="submit" class="tabs__title _tab-active">01 Готовим смету</button>
+							<button type="submit" class="tabs__title">02 Изготавливаем баню</button>
+							<button type="submit" class="tabs__title">03 Доставляемна ваш участок</button>
+							<button type="submit" class="tabs__title">04 Вы наслаждаетесь баней</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								<div class="steps__row">
+									<div class="steps__main">
+										<div class="steps__body">
+											<div class="steps__heading">
+												<h4 class="steps__title">Готовим смету</h4>
+												<div class="steps__step">Шаг 01</div>
+											</div>
+											<div class="steps__text _content">
+												<p>Производим полный расчет стоимости выбранной вами комплектации</p>
+											</div>
+										</div>
+
+										<div class="steps__contacts contact-steps">
+											<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+											<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+											<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+										</div>
+									</div>
+									<div class="steps__icon"><img src="@img/home/steps-1-1.svg" alt="" loading="lazy"></div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="steps__row">
+									<div class="steps__main">
+										<div class="steps__body">
+											<div class="steps__heading">
+												<h4 class="steps__title">Изготавливаем баню</h4>
+												<div class="steps__step">Шаг 02</div>
+											</div>
+											<div class="steps__text _content">
+												<p>Собираем Бани как в готовом виде, также и на участке у клиента.</p>
+											</div>
+										</div>
+
+										<div class="steps__contacts contact-steps">
+											<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+											<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+											<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+										</div>
+									</div>
+									<div class="steps__icon"><img src="@img/home/steps-1-2.svg" alt="" loading="lazy"></div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="steps__row">
+									<div class="steps__main">
+										<div class="steps__body">
+											<div class="steps__heading">
+												<h4 class="steps__title">Доставляем на ваш участок</h4>
+												<div class="steps__step">Шаг 03</div>
+											</div>
+											<div class="steps__text _content">
+												<p>Осуществляем разгрузку бани на манипуляторе, в случае сборки на участке, подготавливаем комплектующие на производстве и собираем Баню бочку на Вашем участке в течения одного дня.</p>
+											</div>
+										</div>
+
+										<div class="steps__contacts contact-steps">
+											<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+											<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+											<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+										</div>
+									</div>
+									<div class="steps__icon"><img src="@img/home/steps-1-3.svg" alt="" loading="lazy"></div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="steps__row">
+									<div class="steps__main">
+										<div class="steps__body">
+											<div class="steps__heading">
+												<h4 class="steps__title">Вы наслаждаетесь баней</h4>
+												<div class="steps__step">Шаг 04</div>
+											</div>
+											<div class="steps__text _content">
+												<p>После установки бани Бочки, можно смело заходить и Париться в ней и ощутить на себе целебные свойства древесины.</p>
+											</div>
+										</div>
+
+										<div class="steps__contacts contact-steps">
+											<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+											<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+											<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+										</div>
+									</div>
+									<div class="steps__icon"><img src="@img/home/steps-1-4.svg" alt="" loading="lazy"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="cases">
+				<div class="cases__container">
+					<div class="cases__heading">
+						<h2 class="cases__title">Купите готовую <br> баню бочку</h2>
+						<div class="swiper__arrows">
+							<button class="swiper__arrow swiper__arrow_left _hover-green"><i class="_icon-arrow"></i></button>
+							<button class="swiper__arrow swiper__arrow_right _hover-green"><i class="_icon-arrow"></i></button>
+						</div>
+					</div>
+					<div class="cases__slider swiper">
+						<div class="cases__wrapper swiper-wrapper">
+							<div class="cases__slide swiper-slide case">
+								<div class="case__row">
+									<div class="case__benefit case__card title-h3">Выгода 25&nbsp;000&nbsp;₽</div>
+									<div class="case__feature case__feature_first case__card">
+										<div class="case__feature-icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+										<div class="case__feature-text _content">
+											<p>Бани уже собраны под ключ и готовы к эксплуатации</p>
+										</div>
+									</div>
+									<div class="case__feature case__feature_second case__card">
+										<div class="case__feature-icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+										<div class="case__feature-text _content">
+											<p>На следующий день будет уже стоять на вашем участке</p>
+										</div>
+									</div>
+									<div class="case__main case__card">
+										<div class="case__title">Баня 6м2 из кедра</div>
+
+										<div class="case__contacts contact-steps">
+											<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+											<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+											<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+										</div>
+
+										<div class="case__options options-case">
+											<div class="options-case__column">
+												<div class="options-case__item">
+													<div>Общая длина</div>
+													<div>5,7&nbsp;м</div>
+												</div>
+												<div class="options-case__item">
+													<div>Высота и ширина</div>
+													<div>2,1&nbsp;м</div>
+												</div>
+											</div>
+											<div class="options-case__column">
+												<div class="options-case__item">
+													<div>Парная</div>
+													<div>2,1&nbsp;м</div>
+												</div>
+												<div class="options-case__item">
+													<div>Душевая</div>
+													<div>1,5&nbsp;м</div>
+												</div>
+											</div>
+											<div class="options-case__column">
+												<div class="options-case__item">
+													<div>Комната отдыха</div>
+													<div>2,5&nbsp;м</div>
+												</div>
+												<div class="options-case__item">
+													<div>Длина козырька</div>
+													<div>0,4&nbsp;м</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="case__gallery swiper">
+											<div class="case__wrapper swiper-wrapper" data-gallery>
+												<div data-src="@img/home/information-template-1-1.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-1.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-2.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-2.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-3.jpg" class="case__slide swiper-slide"><img src="@img/home/manufacturers-1-5.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-4.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-4.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-5.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-5.jpg" alt="" loading="lazy"></div>
+											</div>
+
+											<div class="swiper-pagination"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cases__slide swiper-slide case">
+								<div class="case__row">
+									<div class="case__benefit case__card title-h3">Выгода 44&nbsp;000&nbsp;₽</div>
+									<div class="case__feature case__feature_first case__card">
+										<div class="case__feature-icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+										<div class="case__feature-text _content">
+											<p>Бани уже собраны под ключ и готовы к эксплуатации</p>
+										</div>
+									</div>
+									<div class="case__feature case__feature_second case__card">
+										<div class="case__feature-icon"><img src="@img/icons/accept.svg" alt="" loading="lazy"></div>
+										<div class="case__feature-text _content">
+											<p>На следующий день будет уже стоять на вашем участке</p>
+										</div>
+									</div>
+									<div class="case__main case__card">
+										<div class="case__title">Баня 66м2 из кедра</div>
+
+										<div class="case__contacts contact-steps">
+											<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+											<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+											<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+										</div>
+
+										<div class="case__options options-case">
+											<div class="options-case__column">
+												<div class="options-case__item">
+													<div>Общая длина</div>
+													<div>5,7&nbsp;м</div>
+												</div>
+												<div class="options-case__item">
+													<div>Высота и ширина</div>
+													<div>2,1&nbsp;м</div>
+												</div>
+											</div>
+											<div class="options-case__column">
+												<div class="options-case__item">
+													<div>Парная</div>
+													<div>2,1&nbsp;м</div>
+												</div>
+												<div class="options-case__item">
+													<div>Душевая</div>
+													<div>1,5&nbsp;м</div>
+												</div>
+											</div>
+											<div class="options-case__column">
+												<div class="options-case__item">
+													<div>Комната отдыха</div>
+													<div>2,5&nbsp;м</div>
+												</div>
+												<div class="options-case__item">
+													<div>Длина козырька</div>
+													<div>0,4&nbsp;м</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="case__gallery swiper">
+											<div class="case__wrapper swiper-wrapper" data-gallery>
+												<div data-src="@img/home/information-template-1-2.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-2.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-1.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-1.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-3.jpg" class="case__slide swiper-slide"><img src="@img/home/manufacturers-1-5.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-4.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-4.jpg" alt="" loading="lazy"></div>
+												<div data-src="@img/home/information-template-1-5.jpg" class="case__slide swiper-slide"><img src="@img/home/information-template-1-5.jpg" alt="" loading="lazy"></div>
+											</div>
+
+											<div class="swiper-pagination"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="faq">
+				<div class="faq__container">
+					<div class="faq__row">
+						<div class="faq__text _content">
+							<h2>часто задаваемые вопросы</h2>
+						</div>
+						<div data-spollers class="faq__spollers spollers">
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title _spoller-active"><span>Можно ли париться в бане-бочке зимой?</span></button>
+								<div class="spollers__body">
+									<div class="_content">
+										<p>НУЖНО!!! За счет повышенной плотности древесины в зимний период баня держит стабильную температуру внутри. Поэтому Вам не будет холодно!</p>
+									</div>
+								</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title"><span>Ваша печь подходит для русской бани?</span></button>
+								<div class="spollers__body">
+									<div class="_content">
+										<p>НУЖНО!!! За счет повышенной плотности древесины в зимний период баня держит стабильную температуру внутри. Поэтому Вам не будет холодно!</p>
+									</div>
+								</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title"><span>Что подразумеватеся под стандартной комплектацией</span></button>
+								<div class="spollers__body">
+									<div class="_content">
+										<p>НУЖНО!!! За счет повышенной плотности древесины в зимний период баня держит стабильную температуру внутри. Поэтому Вам не будет холодно!</p>
+									</div>
+								</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title"><span>Утеплена ли баня внутри</span></button>
+								<div class="spollers__body">
+									<div class="_content">
+										<p>НУЖНО!!! За счет повышенной плотности древесины в зимний период баня держит стабильную температуру внутри. Поэтому Вам не будет холодно!</p>
+									</div>
+								</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title"><span>Какой фундамент нужен под баню</span></button>
+								<div class="spollers__body">
+									<div class="_content">
+										<p>НУЖНО!!! За счет повышенной плотности древесины в зимний период баня держит стабильную температуру внутри. Поэтому Вам не будет холодно!</p>
+									</div>
+								</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title"><span>Как ухаживать за баней</span></button>
+								<div class="spollers__body">НУЖНО</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="maps">
+				<div class="maps__container">
+					<div class="maps__wrapper">
+						<div class="maps__top">
+							<h2 class="maps__title">Наши контакты</h2>
+
+							<div class="maps__contacts contacts">
+								<div class="contacts__item"><a href="tel:+79141717832">+7 914 171 78 32</a></div>
+								<div class="contacts__item"><a href="mailto:Chan.khv@mail.ru">Chan.khv@mail.ru</a></div>
+								<div class="contacts__item"><a href="https://yandex.ru/maps/-/CCUjMXSSdD" target="_blank">ул. шкотова 22</a></div>
+								
+								<div class="contact-steps">
+									<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+									<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+									<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+								</div>
+							</div>
+
+						</div>
+
+						<a href="https://yandex.ru/maps/-/CCUjMXSSdD" target="_blank" class="maps__map">
+
+							<picture>
+								<source srcset="@img/home/map.jpg" media="(min-width: 768.98px)">
+								<img src="@img/home/map-mob.jpg" alt="" loading="lazy">
+							</picture>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

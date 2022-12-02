@@ -1,0 +1,62 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+	display: inline-flex;
+	padding: 0px 0px;
+	@media (any-hover: hover) {
+		&:hover {
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	@include adaptiveValue("font-size", 16, 14);
+	line-height: math.div(22, 16);
+	text-align: center;
+	border-radius: $border-radius;
+	padding: rem(24);
+	min-width: rem(240);
+	border: 1px solid transparent;
+	@include adaptiveValue("padding-top", 24, 15);
+	@include adaptiveValue("padding-bottom", 24, 15);
+
+	span {
+		&:not(:last-child) {
+			 @include adaptiveValue("margin-right", 32, 16);
+		}
+	}
+
+	i {
+		@include adaptiveValue("font-size", 22, 18);
+	}
+
+	@media (max-width: $mobileSmall) {
+		width: 100%;
+	}
+
+	// .btn_green
+	&_green {
+		background-color: $Green;
+		color: $White;
+	}
+
+	// .btn_white
+	&_white {
+		background-color: $White;
+		border: rem(1) solid $Line;
+	}
+
+	// .btn_border
+	&_border {
+		background-color: transparent;
+		border: rem(1) solid $Line;
+	}
+}

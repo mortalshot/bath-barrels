@@ -1,0 +1,70 @@
+.checkbox {
+	position: relative;
+	margin: rem(-6);
+
+	// .checkbox__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		&:focus + .checkbox__label:before {
+			filter: drop-shadow(0px 0px 4px $Green);
+		}
+		&:checked + .checkbox__label {
+			&::before {
+				background-color: $Green;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	// .checkbox__label
+	&__label {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		padding: rem(6);
+
+		a {
+			color: $Green;
+			text-decoration: underline from-font;
+			text-underline-offset: 3px;
+			transition: $transition ease text-decoration, opacity 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: 0.8;
+					text-decoration: underline transparent from-font;
+				}
+			}
+		}
+
+		&:before {
+			content: "";
+			align-self: center;
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(18);
+			border: rem(1) solid $LGrey;
+			border-radius: rem(6);
+			margin-right: rem(8);
+			background-color: $White;
+		}
+		&::after {
+			content: "\e90a";
+			@extend %ic;
+			font-size: rem(14);
+			position: absolute;
+			left: rem(8);
+			color: $White;
+			opacity: 0;
+			transition: $transition ease opacity 0s;
+		}
+	}
+	// .checkbox__text
+	&__text {
+	}
+}

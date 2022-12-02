@@ -1,0 +1,377 @@
+// Заголовки, общие БЄМ блоки и проче...
+h,
+.title-h {
+   &1,
+   &2 {
+      font-weight: 600;
+      @include adaptiveValue("font-size", 50, 24);
+      line-height: math.div(55, 50);
+      letter-spacing: em(2, 50);
+      text-transform: uppercase;
+   }
+   &3 {
+      @include adaptiveValue("font-size", 40, 20);
+      line-height: math.div(22, 20);
+      letter-spacing: em(1.6, 40);
+   }
+   &4 {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 22, 16);
+      line-height: math.div(29, 22);
+   }
+}
+
+img,
+video,
+svg {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+section {
+   @include adaptiveValue("margin-bottom", 140, 56);
+
+   &:first-child {
+      @include adaptiveValue("padding-top", 60, 16);
+   }
+}
+
+[data-gallery] {
+   [data-src] {
+      cursor: pointer;
+
+      @media (any-hover: hover) {
+         transition: $transition ease opacity 0s;
+
+         &:hover {
+            opacity: 0.8;
+         }
+      }
+   }
+}
+
+._content {
+   & > * {
+      margin-top: rem(16);
+      margin-bottom: rem(16);
+   }
+
+   a {
+      text-decoration: underline from-font;
+      text-underline-offset: 3px;
+      transition: $transition ease text-decoration 0s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline transparent from-font;
+         }
+      }
+   }
+
+   p {
+      margin: rem(16) 0;
+   }
+
+   ol {
+      counter-reset: item;
+
+      li {
+         position: relative;
+         @include adaptiveValue("padding-left", 40, 24);
+         list-style-type: none;
+
+         &::before {
+            content: counter(item) ".";
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+         }
+
+         & > ol {
+            counter-reset: subitem;
+
+            li {
+               &::before {
+                  content: counter(item) "." counters(subitem, ".") " ";
+                  counter-increment: subitem;
+               }
+            }
+         }
+      }
+   }
+
+   ul {
+      padding-left: rem(20);
+      display: grid;
+      align-content: flex-start;
+      row-gap: rem(8);
+      margin: rem(16) 0;
+
+      li {
+         list-style-type: disc;
+      }
+   }
+
+   .table {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: thin;
+
+      table {
+         width: 100%;
+         border-collapse: collapse;
+      }
+   }
+
+   .wp-block-quote {
+      cite {
+         opacity: 0.6;
+      }
+   }
+
+   figure {
+      img {
+      }
+
+      figcaption {
+         @include adaptiveValue("font-size", 16, 12);
+         line-height: math.div(24, 16);
+         @include adaptiveValue("margin-top", 20, 12);
+      }
+   }
+
+   @for $i from 1 through 4 {
+      .columns-#{$i} {
+         display: grid;
+         @include adaptiveValue("gap", 35, 10);
+      }
+   }
+   .columns-4 {
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+      @media (min-width: $mobile) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+   }
+   .columns-3 {
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+   }
+   .columns-2 {
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+
+   .wp-block-gallery {
+      figure {
+         margin: 0;
+
+         @media (min-width: $mobileSmall) {
+            position: relative;
+            padding-bottom: 100%;
+
+            img {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+      }
+   }
+
+   :first-child {
+      margin-top: 0;
+   }
+   :last-child {
+      margin-bottom: 0;
+   }
+}
+
+._hidden {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0;
+   height: 0;
+   opacity: 0;
+   visibility: hidden;
+   font-size: 0;
+   line-height: 1;
+}
+._disabled {
+   pointer-events: none;
+}
+._md3-hide {
+   @media (max-width: $mobile) {
+      display: none !important;
+   }
+}
+.mb-0 {
+   margin-bottom: 0;
+}
+
+// hover
+[class*="_hover-"] {
+   position: relative;
+   overflow: hidden;
+
+   @media (any-hover: hover) {
+      transition: $transition ease all 0s;
+
+      &::before {
+         will-change: transform;
+      }
+
+      &:hover {
+         span,
+         svg,
+         i {
+            position: relative;
+            z-index: 2;
+         }
+
+         &::before {
+            opacity: 1;
+            transform: translate(-50%, 50%) scale(6);
+         }
+      }
+   }
+
+   &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      bottom: 0;
+      display: block;
+      width: rem(50);
+      height: rem(50);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+      transition: $transition ease all 0s;
+   }
+   &::after {
+      position: relative;
+      z-index: 1;
+   }
+}
+._hover {
+   // ._hover-black
+   &-black {
+      @media (any-hover: hover) {
+         &:hover {
+            color: $White;
+            border-color: $mainColor;
+         }
+      }
+
+      &::before {
+         background-color: $mainColor;
+      }
+   }
+
+   // ._hover-white
+   &-white {
+      @media (any-hover: hover) {
+         &:hover {
+            color: $mainColor;
+            border-color: $White;
+         }
+      }
+
+      &::before {
+         background-color: $White;
+      }
+   }
+
+   // ._hover-green
+   &-green {
+      @media (any-hover: hover) {
+         &:hover {
+            color: $White;
+            border-color: $Green;
+         }
+      }
+
+      &::before {
+         background-color: $Green;
+      }
+   }
+}
+
+// swiper
+.swiper {
+   // .swiper__arrows
+   &__arrows {
+      display: flex;
+      align-items: center;
+   }
+
+   // .swiper__arrow
+   &__arrow {
+      @include adaptiveValue("font-size", 24, 20);
+      @include adaptiveValue("padding", 23, 15);
+      background-color: $White;
+      border-radius: $border-radius;
+      color: $Green;
+      border: 1px solid #d4dcd8;
+
+      &::before {
+         transition: 0.5s ease all 0s;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            &::before {
+               transform: translate(-50%, 50%) scale(3);
+            }
+         }
+      }
+
+      &.swiper-button-disabled {
+         cursor: default;
+         opacity: 0.6;
+         pointer-events: none;
+      }
+
+      // .swiper__arrow_left
+      &_left {
+         margin-right: rem(10);
+         transform: rotate(180deg);
+
+         &[class*="_hover-"] {
+            &::before {
+               bottom: initial;
+            }
+
+            @media (any-hover: hover) {
+               &:hover {
+                  &::before {
+                     transform: translate(-50%, -50%) scale(3);
+                  }
+               }
+            }
+         }
+
+         @media (any-hover: hover) {
+            &:hover {
+               &::before {
+                  transform: translate(-50%, 50%) scale(3);
+               }
+            }
+         }
+      }
+      // .swiper__arrow_right
+      &_right {
+      }
+   }
+}

@@ -1,0 +1,57 @@
+<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+<div id="request" aria-hidden="true" class="popup popup_calculation calculation">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"><img src="@img/icons/close.svg" alt="" loading="lazy"></button>
+			<div class="popup__text">
+				<form action="" class="popup__form form">
+					<div class="popup__title title-h3">заказать рассчёт</div>
+
+					<div class="form__row">
+						<div class="form__item col-12">
+							<div class="form__label">Куда вам удобнее получить каталог?</div>
+
+							<div class="calculation__communication communication">
+								<div class="communication__item">
+									<input id="communication-inp-1" type="radio" name="communication" value="Telegram" class="communication__input" checked>
+									<label for="communication-inp-1" class="communication__label _icon-telegram"><span>Telegram</span></label>
+								</div>
+								<div class="communication__item">
+									<input id="communication-inp-2" type="radio" name="communication" value="WhatsApp" class="communication__input">
+									<label for="communication-inp-2" class="communication__label _icon-whatsapp"><span>WhatsApp</span></label>
+								</div>
+								<div class="communication__item">
+									<input id="communication-inp-3" type="radio" name="communication" value="Перезвоните" class="communication__input">
+									<label for="communication-inp-3" class="communication__label _icon-phone"><span>Перезвоните</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form__item col-12">
+							<label for="request-phone" class="form__label">Введите номер телефона и мы поможем рассчитать стоимость Вашей бани-бочки</label>
+							<input id="request-phone" type="text" name="your-phone" placeholder="+7 900 999 99 99" class="form__input form__input_phone">
+						</div>
+
+						<div class="form__item col-12 mb-0">
+							<div class="form__submit btn btn_green _hover-black" data-content="Заказать рассчёт"> <input type="submit"> </div>
+
+							<div class="form__privacy checkbox">
+								<input id="privacy" class="checkbox__input" type="checkbox" value="Я соглашаюсь с политикой конфиденциальности" name="privacy">
+								<label for="privacy" class="checkbox__label"><span class="checkbox__text">Я соглашаюсь с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

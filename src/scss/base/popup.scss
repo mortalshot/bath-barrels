@@ -1,0 +1,171 @@
+// popup ====================================================================================================
+body::after {
+	content: "";
+	background: rgba($color: #2d322f, $alpha: 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+.popup-show body::after {
+	opacity: 1;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+
+	@media (max-width: $mobileSmall) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	// .popup_show
+	&_show {
+		z-index: 150;
+		visibility: visible;
+		overflow: auto;
+		pointer-events: auto;
+	}
+
+	// .popup__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100%;
+		flex: 1 1 auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// .popup__content
+	&__content {
+		visibility: hidden;
+		transform: scale(0);
+		background-color: $White;
+		@include adaptiveValue("padding", 24, 16);
+		width: 100%;
+		max-width: 900px;
+		border-radius: $border-radius;
+		transition: $transition ease transform 0s;
+
+		.popup_calculation & {
+			max-width: rem(495);
+		}
+
+		.lock & {
+			visibility: visible;
+		}
+
+		.popup_show & {
+			visibility: visible;
+			transform: scale(1);
+		}
+	}
+
+	// .popup__close
+	&__close {
+		position: absolute;
+		top: rem(10);
+		right: rem(10);
+		outline: 0;
+
+		@media (any-hover: hover) {
+			transition: $transition ease transform 0s;
+
+			&:hover {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	// .popup__text
+	&__text {
+	}
+
+	// .popup__title
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: rem(32);
+		padding-right: rem(20);
+	}
+}
+
+// calculation ====================================================================================================
+.calculation {
+	// .calculation__communication
+	&__communication {
+	}
+}
+
+.communication {
+	display: grid;
+	gap: rem(10);
+
+	@media (min-width: $mobileSmall) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	// .communication__item
+	&__item {
+		position: relative;
+		cursor: pointer;
+	}
+
+	// .communication__input
+	&__input {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+
+		&:checked + .communication__label {
+			color: $Green;
+			border-color: $Green;
+			opacity: 1 !important;
+		}
+	}
+
+	// .communication__label
+	&__label {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 16, 14, 1280, 480, 1);
+		padding: rem(14);
+		border: rem(1) solid $Line;
+		border-radius: rem(10);
+		color: $LGrey;
+		transition: $transition ease all 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $Green;
+				color: $Green;
+				opacity: 0.8;
+			}
+		}
+
+		&::before {
+			@include adaptiveValue("font-size", 22, 20, 1280, 480, 1);
+			@include adaptiveValue("margin-right", 10, 8, 1280, 480, 1);
+		}
+	}
+}

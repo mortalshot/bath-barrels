@@ -1,0 +1,214 @@
+// .footer ====================================================================================================
+.footer {
+   @include adaptiveValue("margin-bottom", 40, 20);
+
+   // .footer__container
+   &__container {
+   }
+
+   // .footer__row
+   &__row {
+      @include adaptiveValue("padding", 32, 16);
+      background-color: $mainColor;
+      border-radius: $border-radius;
+      color: $White;
+      display: grid;
+      @include adaptiveValue("column-gap", 100, 32, 1280, 992, 1);
+      row-gap: rem(24);
+
+      @media (min-width: $mobile) {
+         grid-template-columns: percent(190, 1126) 1fr 1fr;
+      }
+   }
+
+   // .footer__left
+   &__left {
+   }
+
+   // .footer__logo
+   &__logo {
+      color: $Grey;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: $White;
+            opacity: 1 !important;
+
+            svg {
+               rect,
+               path {
+                  fill: $White;
+               }
+            }
+         }
+      }
+
+      svg {
+         @include adaptiveValue("width", 96, 53);
+
+         rect,
+         path {
+            fill: $Grey;
+            transition: $transition ease fill 0s;
+         }
+      }
+
+      .logo__text {
+         @include adaptiveValue("font-size", 18, 14, 1280, 768, 1);
+      }
+   }
+
+   // .footer__middle
+   &__middle {
+   }
+
+   // .footer__menu
+   &__menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiveValue("column-gap", 80, 20, 1280, 992, 1);
+      max-width: rem(342);
+   }
+
+   // .footer__menu-column
+   &__menu-column {
+      & > a {
+         display: inline-block;
+         font-weight: 600;
+         @include adaptiveValue("font-size", 12, 10);
+         line-height: math.div(12, 10);
+         letter-spacing: em(0.48, 12);
+         text-transform: uppercase;
+         color: $LGrey;
+
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 16);
+         }
+      }
+
+      ul {
+         display: grid;
+         align-items: flex-start;
+         row-gap: rem(16);
+
+         a {
+            @include adaptiveValue("font-size", 14, 12);
+            line-height: math.div(18, 14);
+         }
+      }
+
+      a {
+         text-decoration: underline transparent from-font;
+         text-underline-offset: 3px;
+         transition: $transition ease text-decoration 0s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               text-decoration: underline from-font;
+            }
+         }
+      }
+   }
+
+   // .footer__right
+   &__right {
+      display: grid;
+      row-gap: rem(24);
+
+      @media (min-width: $mobile) {
+         justify-items: flex-end;
+         align-content: space-between;
+         text-align: right;
+      }
+   }
+
+   .contact-steps {
+      @media (max-width: $mobile) {
+         grid-row: 2/3;
+         flex-direction: row-reverse;
+         justify-content: flex-end;
+      }
+      // .contact-steps__item
+      &__item {
+         @media (max-width: $mobile) {
+            margin: 0 0 0 rem(10) !important;
+         }
+
+         i {
+            @include adaptiveValue("padding", 18, 12, 1280, 992, 1);
+         }
+      }
+      .btn {
+         @include adaptiveValue("padding", 18, 12, 1280, 992, 1);
+         min-width: initial;
+
+         @media (max-width: $mobileSmall) {
+            width: initial;
+         }
+
+         @media (any-hover: hover) {
+            transition: $transition ease border-color 0s;
+
+            &:hover {
+               border-color: $LGrey;
+            }
+         }
+
+         span {
+            &:not(:last-child) {
+               @include adaptiveValue("margin-right", 32, 16, 1280, 992, 1);
+            }
+
+            @media (min-width: $mobile) and (max-width: $tablet) {
+               display: none;
+            }
+            @media (max-width: $mobileSmall) {
+               display: none;
+            }
+         }
+
+         i {
+            color: $Green;
+         }
+      }
+   }
+
+   .contacts {
+      display: grid;
+      row-gap: rem(8);
+
+      // .contacts__item
+      &__item {
+         // .contacts__item_phone
+         &_phone {
+            @include adaptiveValue("font-size", 40, 24);
+            line-height: math.div(26, 24);
+            letter-spacing: em(1.6, 40);
+         }
+         // .contacts__item_mail
+         &_mail {
+            font-weight: 500;
+            @include adaptiveValue("font-size", 22, 16);
+            line-height: math.div(29, 22);
+            color: $Grey;
+         }
+      }
+   }
+}
+
+.logo {
+   // .logo__img
+   &__img {
+   }
+   // .logo__text
+   &__text {
+   }
+}
+
+.contact-steps {
+   // .contact-steps__item
+   &__item {
+   }
+}
+
+//====================================================================================================
