@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Thumbs, Autoplay, Mousewheel } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -191,6 +191,65 @@ function initSliders() {
 		caseGalleryMd3.addEventListener('change', clientsHandleMd2Change);
 		clientsHandleMd2Change(caseGalleryMd3);
 
+	}
+
+	if (document.querySelector('.gallery-product')) {
+		if (document.querySelector('.gallery-product__thumb')) {
+			const productThumbsSwiper = new Swiper('.gallery-product__thumb', {
+				modules: [Thumbs, Mousewheel],
+				observer: true,
+				observeParents: true,
+				slidesPerView: 4,
+				spaceBetween: 8,
+				speed: 800,
+				direction: 'vertical',
+				mousewheel: true,
+
+				// Брейкпоинты
+
+				breakpoints: {
+					574.98: {
+						slidesPerView: 5,
+						spaceBetween: 10,
+					},
+					991.98: {
+						slidesPerView: 6,
+					},
+				},
+
+				// События
+				on: {
+				}
+			});
+
+			new Swiper('.gallery-product__slider', {
+				// Подключаем модули слайдера для конкретного случая
+				modules: [Autoplay, Thumbs],
+				observer: true,
+				observeParents: true,
+				slidesPerView: 1,
+				spaceBetween: 20,
+				speed: 800,
+
+				thumbs: {
+					swiper: productThumbsSwiper
+				},
+			});
+		} else {
+			new Swiper('.gallery-product__slider', {
+				modules: [],
+				observer: true,
+				observeParents: true,
+				slidesPerView: 1,
+				spaceBetween: 20,
+				speed: 800,
+				mousewheel: true,
+
+				// События
+				on: {
+				}
+			});
+		}
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)

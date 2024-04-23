@@ -35,6 +35,9 @@ section {
    &:first-child {
       @include adaptiveValue("padding-top", 60, 16);
    }
+   &:last-child {
+      @include adaptiveValue("margin-bottom", 40, 32);
+   }
 }
 
 [data-gallery] {
@@ -53,8 +56,8 @@ section {
 
 ._content {
    & > * {
-      margin-top: rem(16);
-      margin-bottom: rem(16);
+      @include adaptiveValue("margin-top", 24, 16);
+      @include adaptiveValue("margin-bottom", 24, 16);
    }
 
    a {
@@ -67,10 +70,6 @@ section {
             text-decoration: underline transparent from-font;
          }
       }
-   }
-
-   p {
-      margin: rem(16) 0;
    }
 
    ol {
@@ -113,7 +112,7 @@ section {
       }
    }
 
-   .table {
+   .table, .wp-block-table {
       width: 100%;
       overflow-x: auto;
       scrollbar-width: thin;
@@ -121,6 +120,35 @@ section {
       table {
          width: 100%;
          border-collapse: collapse;
+
+         tr {
+            &:first-child {
+               td {
+                  padding-top: 0;
+                  border-top: 0;
+               }
+            }
+            &:last-child {
+               td {
+                  padding-bottom: 0;
+               }
+            }
+         }
+
+         td {
+            border-top: 1px solid $Line;
+            @include adaptiveValue("padding-top", 16, 8);
+            @include adaptiveValue("padding-bottom", 16, 8);
+            font-weight: 600;
+            @include adaptiveValue("padding-left", 20, 12);
+            min-width: rem(60);
+
+            &:first-child {
+               font-weight: 400;
+               color: $Grey;
+               padding-left: 0;
+            }
+         }
       }
    }
 
@@ -186,14 +214,13 @@ section {
       }
    }
 
-   :first-child {
+   & > :first-child {
       margin-top: 0;
    }
-   :last-child {
+   & > :last-child {
       margin-bottom: 0;
    }
 }
-
 ._hidden {
    position: absolute;
    left: 0;
@@ -214,7 +241,35 @@ section {
    }
 }
 .mb-0 {
-   margin-bottom: 0;
+   margin-bottom: 0 !important;
+}
+
+.wp-content {
+   // .wp-content__container
+   &__container {
+   }
+
+   // .wp-content__title
+   &__title {
+      text-align: center;
+      max-width: rem(834);
+      margin-left: auto;
+      margin-right: auto;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 48, 24);
+      }
+   }
+
+   // .wp-content__wrapper
+   &__wrapper {
+      background-color: $White;
+      border-radius: $border-radius;
+      @include adaptiveValue("padding", 32, 16);
+      max-width: rem(990);
+      margin-left: auto;
+      margin-right: auto;
+   }
 }
 
 // hover

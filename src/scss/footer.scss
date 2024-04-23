@@ -67,6 +67,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       @include adaptiveValue("column-gap", 80, 20, 1280, 992, 1);
+      row-gap: rem(24);
       max-width: rem(342);
    }
 

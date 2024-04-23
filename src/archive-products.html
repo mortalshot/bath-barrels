@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Каталог"
 })
 
 <body>
@@ -73,12 +73,12 @@
                         </div>
                      </div>
                      <div class="main-catalog__sorting">
-                        <select name="form[]" class="form">
-                           <option data-href="?orderby=price" value="Сначала дешевле">Сначала дешевле</option>
-                           <option data-href="?orderby=popularity" value="По популярности">По популярности</option>
-                           <option data-href="?orderby=rating" value="По рейтингу">По рейтингу</option>
-                           <option data-href="?orderby=date" value="По новизне">По новизне</option>
-                           <option data-href="?orderby=price-desc" value="Сначала дороже">Сначала дороже</option>
+                        <select name="form[]" class="form sorting">
+                           <option value="Сначала дешевле">Сначала дешевле</option>
+                           <option value="По популярности">По популярности</option>
+                           <option value="По рейтингу">По рейтингу</option>
+                           <option value="По новизне">По новизне</option>
+                           <option value="Сначала дороже">Сначала дороже</option>
                         </select>
                      </div>
                   </div>
@@ -92,18 +92,18 @@
                            <a href="single-product.html" class="main-product__image"><img src="@img/products/product-1-preview.jpg" alt="" loading="lazy"></a>
                            <div class="main-product__footer">
                               <div class="main-product__price title-h3">214 900 ₽</div>
-                              <div class="main-product__button"><button class="btn btn_green _hover-black"><span>Заказать</span></button></div>
+                              <div class="main-product__button"><button type="button" data-popup="#request" class="btn btn_green _hover-black"><span>Заказать</span></button></div>
                            </div>
                         </article>
                         <article class="main-catalog__product main-product">
                            <div class="main-product__heading">
-                              <a href="single-product.html" class="main-product__title title-h4">«Мини» 2,5 м</a>
+                              <a href="single-product.html" class="main-product__title title-h4">«Макс» 2,5 м</a>
                               <div class="main-product__category">Баня бочка</div>
                            </div>
                            <a href="single-product.html" class="main-product__image"><img src="@img/home/home-banner.jpg" alt="" loading="lazy"></a>
                            <div class="main-product__footer">
                               <div class="main-product__price title-h3">214 900 ₽</div>
-                              <div class="main-product__button"><button class="btn btn_green _hover-black"><span>Заказать</span></button></div>
+                              <div class="main-product__button"><button type="button" data-popup="#request" class="btn btn_green _hover-black"><span>Заказать</span></button></div>
                            </div>
                         </article>
                         <article class="main-catalog__product main-product">
@@ -114,7 +114,7 @@
                            <a href="single-product.html" class="main-product__image"><img src="@img/products/product-2-preview.jpg" alt="" loading="lazy"></a>
                            <div class="main-product__footer">
                               <div class="main-product__price title-h3">214 900 ₽</div>
-                              <div class="main-product__button"><button class="btn btn_green _hover-black"><span>Заказать</span></button></div>
+                              <div class="main-product__button"><button type="button" data-popup="#request" class="btn btn_green _hover-black"><span>Заказать</span></button></div>
                            </div>
                         </article>
                         <article class="main-catalog__product main-product">
@@ -125,7 +125,7 @@
                            <a href="single-product.html" class="main-product__image"><img src="@img/home/manufacturers-1-1.jpg" alt="" loading="lazy"></a>
                            <div class="main-product__footer">
                               <div class="main-product__price title-h3">214 900 ₽</div>
-                              <div class="main-product__button"><button class="btn btn_green _hover-black"><span>Заказать</span></button></div>
+                              <div class="main-product__button"><button type="button" data-popup="#request" class="btn btn_green _hover-black"><span>Заказать</span></button></div>
                            </div>
                         </article>
 

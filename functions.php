@@ -53,6 +53,7 @@ if (!function_exists('bb_setup')) :
 		register_nav_menus(
 			array(
 				'header' => esc_html__('Header menu', 'bb'),
+				'lang' => esc_html__('Language menu', 'bb'),
 			)
 		);
 
@@ -101,6 +102,8 @@ function bb_scripts()
 	wp_enqueue_style('bb-stylesheet', get_template_directory_uri() . '/dist/css/style.min.css', array(), _S_VERSION);
 
 	wp_enqueue_script('bb-custom-js', get_template_directory_uri() . '/dist/js/app.min.js', '', _S_VERSION, true);
+
+	wp_localize_script('bb-custom-js', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', 'bb_scripts');
 
@@ -108,19 +111,19 @@ add_action('wp_enqueue_scripts', 'bb_scripts');
 if (function_exists('acf_add_options_page')) {
 	// Main Theme Settings Page
 	$parent = acf_add_options_page(array(
-		'page_title' => 'Theme settings',
-		'menu_title' => 'Theme settings',
-		'redirect'   => 'Theme Settings',
+		'page_title' => 'Настройки темы',
+		'menu_title' => 'Настройки темы',
+		'redirect'   => 'Настройки темы',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' => 'Theme settings',
-		'menu_title' => 'Theme settings',
+		'page_title' => 'Настройки темы',
+		'menu_title' => 'Настройки темы',
 		'menu_slug'  => "acf-options",
 		'parent'     => $parent['menu_slug']
 	));
 	acf_add_options_sub_page(array(
-		'page_title' => 'Repeating blocks',
-		'menu_title' => 'Repeating blocks',
+		'page_title' => 'Повторяющиеся блоки',
+		'menu_title' => 'Повторяющиеся блоки',
 		'parent'     => $parent['menu_slug']
 	));
 }
@@ -223,11 +226,179 @@ function new_excerpt_more($more)
 }
 
 // Удаляем аттрибут role и тэг h2 
-function sanitize_pagination($content) {
+function sanitize_pagination($content)
+{
 	$content = str_replace('navigation', '', $content);
 	$content = preg_replace('#<h2.*?>(.*?)<\/h2>#si', '', $content);
 
 	return $content;
 }
-
 add_action('navigation_markup_template', 'sanitize_pagination');
+
+// Добавляем свой тип записи
+add_action('init', 'register_post_types');
+function register_post_types()
+{
+	register_post_type('products', [
+		'label'  => null,
+		'labels' => [
+			'name'               => 'Товары', // основное название для типа записи
+			'singular_name'      => 'Товар', // название для одной записи этого типа
+			'add_new'            => 'Добавить новый товар', // для добавления новой записи
+			'add_new_item'       => 'Добавить новый товар', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактировать товар', // для редактирования типа записи
+			'new_item'           => 'Новый товар', // текст новой записи
+			'view_item'          => 'Просмотр товара', // для просмотра записи этого типа.
+			'search_items'       => 'Искать товар', // для поиска по этим типам записи
+			'not_found'          => 'Ничего не найдено', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Ничего не найдено', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Товары', // название меню
+		],
+		'description'         => 'Товары',
+		'public'              => true,
+		'show_in_menu'        => true, // показывать ли в меню адмнки
+		'rest_base'           => null, // $post_type. C WP 4.7
+		'menu_position'       => 3,
+		'menu_icon'           => 'dashicons-cart',
+		'hierarchical'        => true,
+		'show_in_rest'		  => true,
+		'supports'            => ['title', 'custom-fields'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => ['category',],
+		'has_archive'         => true,
+		'rewrite'             => true,
+		'query_var'           => true,
+	]);
+}
+// Добавляем таксономии для своего типа записей
+add_action('init', 'create_taxonomy');
+function create_taxonomy()
+{
+	// список параметров: wp-kama.ru/function/get_taxonomy_labels
+	register_taxonomy('category', ['products'], [
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => [
+			'name'              => 'Категории',
+			'singular_name'     => 'Категория',
+			'search_items'      => 'Искать категорию',
+			'all_items'         => 'Все категории',
+			'view_item '        => 'Просмотр категории',
+			'parent_item'       => 'Родительская категория',
+			'parent_item_colon' => 'Родительская категория',
+			'edit_item'         => 'Редактировать',
+			'update_item'       => 'Обновить',
+			'add_new_item'      => 'Добавить новую',
+			'new_item_name'     => 'Новая категория',
+			'menu_name'         => 'Категории',
+		],
+		'description'           => 'Категории', // описание таксономии
+		'public'                => true,
+		'publicly_queryable'    => null, // равен аргументу public
+		'show_in_nav_menus'     => true, // равен аргументу public
+		'show_ui'               => true, // равен аргументу public
+		'show_in_menu'          => true, // равен аргументу show_ui
+		'show_tagcloud'         => true, // равен аргументу show_ui
+		'show_in_quick_edit'    => true, // равен аргументу show_ui
+		'show_admin_column'		=> true,
+		'show_in_rest'			=> true,
+		'hierarchical'          => false,
+		'rewrite'               => true,
+	]);
+}
+
+// Функция для изменения "posts" на "Опции товара" в боковом меню администратора.
+function change_post_menu_label()
+{
+	global $menu;
+	global $submenu;
+	$menu[5][0] = 'Опции товара';
+	$submenu['edit.php'][5][0] = 'Опции товара';
+	$submenu['edit.php'][10][0] = 'Добавить опцию';
+	$submenu['edit.php'][16][0] = 'Группа опций';
+	echo '';
+}
+add_action('admin_menu', 'change_post_menu_label');
+function change_post_object_label()
+{
+	global $wp_post_types;
+	$labels = &$wp_post_types['post']->labels;
+	$labels->name = 'Новая опция';
+	$labels->singular_name = 'Опция';
+	$labels->add_new = 'Добавить новую';
+	$labels->add_new_item = 'Добавить новую';
+	$labels->edit_item = 'Редактировать';
+	$labels->new_item = 'Новая опция';
+	$labels->view_item = 'Смотреть';
+	$labels->search_items = 'Искать опцию';
+	$labels->not_found = 'Ничего не найдено';
+	$labels->not_found_in_trash = 'Ничего не найдено';
+
+	remove_post_type_support('post', 'editor');
+	remove_post_type_support('post', 'excerpt');
+	remove_post_type_support('post', 'comments');
+	remove_post_type_support('post', 'thumbnail');
+	remove_post_type_support('post', 'author');
+	remove_post_type_support('post', 'trackbacks');
+}
+add_action('init', 'change_post_object_label');
+
+// AJAX фильтр
+add_action( 'wp_ajax_getpost', 'flex_get_posts' );
+add_action( 'wp_ajax_nopriv_getpost', 'flex_get_posts' );
+
+function flex_get_posts(){
+	if (!empty($_POST['taxonomy'])) {
+		$args = array(
+			'post_type' => $_POST[ 'post_type' ],
+			'posts_per_page' => -1, //posts per one load
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field'    => 'slug',
+					'terms'    => $_POST['taxonomy']
+				)
+			),
+			'meta_key'  => 'product-price',
+			'orderby' => 'meta_value_num',
+			'order'	=> !empty($_POST['order']) ? $_POST['order'] : 'ASC',
+			'paged' => $_POST['page'],
+		);
+	} else {
+		$args = array(
+			'post_type' => $_POST['post_type'],
+			'posts_per_page' => -1, //posts per one load
+			'meta_key'  => 'product-price',
+			'orderby' => 'meta_value_num',
+			'order'	=> !empty($_POST['order']) ? $_POST['order'] : 'ASC',
+			'paged' => $_POST['page'],
+		);
+	}
+
+	query_posts( $args );
+
+	if (have_posts()) :
+		while (have_posts()) :
+			the_post();
+
+			$id = get_the_ID();
+			$galleryProduct = get_field('gallery-product', $id);
+			$productPrice = get_field('product-price', $id);
+			$terms = wp_get_post_terms($id, 'category');
+
+			echo '<article class="main-catalog__product main-product">';
+				echo '<div class="main-product__heading">';
+					echo '<a href="'. get_the_permalink() .'" class="main-product__title title-h4">'. get_the_title() .'</a>';
+					echo '<div class="main-product__category">'. $terms[0]->name .'</div>';
+				echo '</div>';
+				echo '<a href="'. get_the_permalink() .'" class="main-product__image"><img src="'. $galleryProduct[0]['url'] .'" alt="'. $galleryProduct[0]['alt'] .'" loading="lazy"></a>';
+				echo '<div class="main-product__footer">';
+					echo '<div class="main-product__price title-h3">'. number_format($productPrice, 0, '', ' ') .' ₽</div>';
+					echo '<div class="main-product__button"><button type="button" data-popup="#request" class="btn btn_green _hover-black"><span>Заказать</span></button></div>';
+				echo '</div>';
+			echo '</article>';
+		endwhile;
+		wp_reset_query();
+	endif;
+
+	wp_die();
+}

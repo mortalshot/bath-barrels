@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Страница не найдена, либо ещё не создана"
+})
+
+<body class="error404">
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+         <section class="error" data-fullscreen>
+            <div class="error__container">
+               <div class="error__image"><img src="@img/error.png" alt="" loading="lazy"></div>
+               <div class="error__body">
+                  <h1 class="error__title">Страница не найдена, либо ещё не создана</h1>
+                  <a href="home.html" class="error__link">На главную</a>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('html/_footer.htm',{})
+   </div>
+   @@include('html/_popup.htm',{})
+   @@include('html/_js.htm',{})
+</body>
+
+</html>

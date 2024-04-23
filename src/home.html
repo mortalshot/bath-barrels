@@ -57,34 +57,34 @@
 
 					<div class="categories-widget__list">
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><img src="@img/products/category-1.jpg" alt="" loading="lazy"></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Круглые бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Круглые бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><img src="@img/products/category-2.jpg" alt="" loading="lazy"></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Квадро бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Квадро бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><img src="@img/products/category-3.jpg" alt="" loading="lazy"></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Окта бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Окта бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><img src="@img/products/category-4.jpg" alt="" loading="lazy"></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Вместительные бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Вместительные бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><img src="@img/products/category-5.jpg" alt="" loading="lazy"></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Купели</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Купели</span></div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -544,8 +544,7 @@
 			<section class="template8">
 				<div class="template8__container">
 					<h2 class="template8__title">
-						Изготовим баню
-						<span>за <span style="color:#3DB36C">2</span> дня</span>
+						Изготовим баню <span>за <span style="color:#3DB36C">2</span> дня</span>
 					</h2>
 					<div class="template8__image"><img src="@img/home/template8-1.png" alt="" loading="lazy"></div>
 				</div>
@@ -654,7 +653,7 @@
 				</div>
 			</section>
 
-			<section class="cases">
+			<section id="cases" class="cases">
 				<div class="cases__container">
 					<div class="cases__heading">
 						<h2 class="cases__title">Купите готовую <br> баню бочку</h2>
@@ -868,36 +867,7 @@
 				</div>
 			</section>
 
-			<section class="maps">
-				<div class="maps__container">
-					<div class="maps__wrapper">
-						<div class="maps__top">
-							<h2 class="maps__title">Наши контакты</h2>
-
-							<div class="maps__contacts contacts">
-								<div class="contacts__item"><a href="tel:+79141717832">+7 914 171 78 32</a></div>
-								<div class="contacts__item"><a href="mailto:Chan.khv@mail.ru">Chan.khv@mail.ru</a></div>
-								<div class="contacts__item"><a href="https://yandex.ru/maps/-/CCUjMXSSdD" target="_blank">ул. шкотова 22</a></div>
-								
-								<div class="contact-steps">
-									<a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
-									<a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
-									<a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
-								</div>
-							</div>
-
-						</div>
-
-						<a href="https://yandex.ru/maps/-/CCUjMXSSdD" target="_blank" class="maps__map">
-
-							<picture>
-								<source srcset="@img/home/map.jpg" media="(min-width: 768.98px)">
-								<img src="@img/home/map-mob.jpg" alt="" loading="lazy">
-							</picture>
-						</a>
-					</div>
-				</div>
-			</section>
+			@@include('html/maps.htm',{})
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

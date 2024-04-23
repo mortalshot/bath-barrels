@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221202095536">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240423160556">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
 <body>
 	<div class="wrapper">
-		<header class="header" data-scroll="90" data-scroll-show>
+		<header class="header _header-show" data-scroll="90" data-scroll-show>
 			<div class="header__container">
 				<div class="header__left">
 					<div class="header__menu menu">
@@ -41,19 +41,19 @@
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="contacts.html">
 										<i class="_icon-location"></i>
 										<span>Контакты</span>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="about.html#delivery">
 										<i class="_icon-delivery"></i>
 										<span>Доставка и оплата</span>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="about.html">
 										<i class="_icon-info-2"></i>
 										<span>О компании</span>
 									</a>
@@ -65,7 +65,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="home.html#cases">
 										<i class="_icon-portfolio"></i>
 										<span>Реализованные проекты</span>
 									</a>
@@ -155,34 +155,34 @@
 
 					<div class="categories-widget__list">
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><picture><source srcset="img/products/category-1.webp" type="image/webp"><img src="img/products/category-1.jpg" alt="" loading="lazy"></picture></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Круглые бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Круглые бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><picture><source srcset="img/products/category-2.webp" type="image/webp"><img src="img/products/category-2.jpg" alt="" loading="lazy"></picture></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Квадро бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Квадро бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><picture><source srcset="img/products/category-3.webp" type="image/webp"><img src="img/products/category-3.jpg" alt="" loading="lazy"></picture></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Окта бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Окта бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><picture><source srcset="img/products/category-4.webp" type="image/webp"><img src="img/products/category-4.jpg" alt="" loading="lazy"></picture></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Вместительные бани</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Вместительные бани</span></div>
+							</a>
 						</div>
 						<div class="categories-widget__item category-item">
-							<div class="category-item__wrapper">
+							<a href="archive-products.html" class="category-item__wrapper">
 								<div class="category-item__img"><picture><source srcset="img/products/category-5.webp" type="image/webp"><img src="img/products/category-5.jpg" alt="" loading="lazy"></picture></div>
-								<a href="category.html" class="category-item__link _hover-black"><span>Купели</span></a>
-							</div>
+								<div class="category-item__link _hover-black"><span>Купели</span></div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -642,8 +642,7 @@
 			<section class="template8">
 				<div class="template8__container">
 					<h2 class="template8__title">
-						Изготовим баню
-						<span>за <span style="color:#3DB36C">2</span> дня</span>
+						Изготовим баню <span>за <span style="color:#3DB36C">2</span> дня</span>
 					</h2>
 					<div class="template8__image"><picture><source srcset="img/home/template8-1.webp" type="image/webp"><img src="img/home/template8-1.png" alt="" loading="lazy"></picture></div>
 				</div>
@@ -752,7 +751,7 @@
 				</div>
 			</section>
 
-			<section class="cases">
+			<section id="cases" class="cases">
 				<div class="cases__container">
 					<div class="cases__heading">
 						<h2 class="cases__title">Купите готовую <br> баню бочку</h2>
@@ -966,7 +965,7 @@
 				</div>
 			</section>
 
-			<section class="maps">
+			<section id="maps" class="maps">
 				<div class="maps__container">
 					<div class="maps__wrapper">
 						<div class="maps__top">
@@ -1072,6 +1071,7 @@
 				<div class="popup__text">
 					<form action="" class="popup__form form">
 						<div class="popup__title title-h3">заказать рассчёт</div>
+						<input class="wpcf7-form-control wpcf7-hidden product-name" value="" type="hidden" name="product-name">
 
 						<div class="form__row">
 							<div class="form__item col-12">
@@ -1103,7 +1103,7 @@
 
 								<div class="form__privacy checkbox">
 									<input id="privacy" class="checkbox__input" type="checkbox" value="Я соглашаюсь с политикой конфиденциальности" name="privacy">
-									<label for="privacy" class="checkbox__label"><span class="checkbox__text">Я соглашаюсь с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+									<label for="privacy" class="checkbox__label"><span class="checkbox__text">Я соглашаюсь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span></label>
 								</div>
 							</div>
 						</div>
@@ -1112,7 +1112,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20221202095536"></script>
+	<script src="js/app.min.js?_v=20240423160556"></script>
 </body>
 
 </html>

@@ -209,6 +209,26 @@
       justify-items: flex-start;
       @include adaptiveValue("row-gap", 24, 12);
    }
+   a.category-item__wrapper {
+      @media (any-hover: hover) {
+         &:hover {
+            ._hover-black {
+               color: $White;
+               border-color: #2d322f;
+
+               span {
+                  position: relative;
+                  z-index: 2;
+               }
+
+               &::before {
+                  opacity: 1;
+                  transform: translate(-50%, 50%) scale(6);
+               }
+            }
+         }
+      }
+   }
 
    // .category-item__img
    &__img {
@@ -257,7 +277,7 @@
       @media (max-width: $mobileM) {
          width: 100%;
       }
-      @media (max-width: $mobileSmall) {
+      /* @media (max-width: $mobileSmall) {
          position: initial;
          &::after {
             content: "";
@@ -267,7 +287,7 @@
             left: 0;
             right: 0;
          }
-      }
+      } */
    }
 }
 
@@ -467,10 +487,10 @@
 
    // .information-template_third
    &_third {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr) !important;
 
       @media (max-width: $mobile) {
-         grid-template-columns: 1fr;
+         grid-template-columns: 1fr !important;
       }
 
       .information-template__column {
@@ -1055,6 +1075,7 @@
          display: flex;
          align-items: center;
          justify-content: center;
+         flex-wrap: wrap;
          @include adaptiveValue("column-gap", 30, 12);
 
          span {
@@ -1279,6 +1300,39 @@
       i {
          @include adaptiveValue("font-size", 22, 20);
          padding: rem(14);
+      }
+
+      .btn {
+         border: rem(1) solid #d2d9d5;
+         flex-direction: row-reverse;
+         padding: rem(14);
+         min-width: initial;
+
+         @media (any-hover: hover) {
+            transition: $transition ease border-color 0s;
+
+            &:hover {
+               border-color: $LGrey;
+            }
+         }
+
+         i,
+         span {
+            border: 0;
+            padding: 0;
+         }
+
+         span {
+            padding: 0;
+            margin-right: rem(10);
+
+            @media (min-width: $mobileM) and (max-width: $mobile) {
+               display: none;
+            }
+            @media (max-width: $mobileSmall) {
+               display: none;
+            }
+         }
       }
    }
 }
@@ -1584,6 +1638,10 @@
       &:not(:first-child) {
          @include adaptiveValue("margin-top", 64, 40);
       }
+
+      .contacts__item {
+         text-transform: uppercase;
+      }
    }
 
    // .maps__contacts
@@ -1592,6 +1650,7 @@
          @include adaptiveValue("font-size", 40, 20);
          line-height: math.div(22, 20);
          letter-spacing: em(1.6, 40);
+         text-transform: uppercase;
 
          &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 24, 8);

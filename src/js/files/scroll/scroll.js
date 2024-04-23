@@ -30,7 +30,8 @@ export function pageNavigation() {
 				gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
 				e.preventDefault();
 			}
-		} else if (e.type === "watcherCallback" && e.detail) {
+		}
+		else if (e.type === "watcherCallback" && e.detail) {
 			const entry = e.detail.entry;
 			const targetElement = entry.target;
 			// Обработка пунктов навигации, если указано значение navigator подсвечиваем текущий пукт меню

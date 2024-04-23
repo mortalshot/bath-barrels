@@ -1,0 +1,57 @@
+// banner ====================================================================================================
+.error {
+   padding-top: rem(32) !important;
+   padding-bottom: rem(32);
+   display: grid;
+   align-items: center;
+   
+   &:last-child {
+      margin-bottom: 0;
+   }
+   // .error__container
+   &__container {
+      max-width: rem(660);
+   }
+
+   // .error__image
+   &__image {
+   }
+
+   // .error__body
+   &__body {
+      max-width: rem(240);
+      display: grid;
+      row-gap: rem(16);
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   // .error__title
+   &__title {
+      font-weight: 400;
+      text-transform: none;
+      @include adaptiveValue("font-size", 16, 14);
+      line-height: math.div(22, 16);
+      letter-spacing: 0;
+   }
+
+   // .error__link
+   &__link {
+      font-weight: 600;
+      color: $Green;
+      text-decoration: underline transparent from-font;
+      text-underline-offset: 3px;
+      transition: $transition ease text-decoration 0s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline from-font;
+         }
+      }
+   }
+}
+
+.error404 .footer {
+   display: none;
+}

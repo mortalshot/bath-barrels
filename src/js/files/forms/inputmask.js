@@ -9,5 +9,5 @@ import "inputmask/dist/inputmask.min.js";
 
 const inputMasks = document.querySelectorAll('.form__input_phone');
 if (inputMasks.length) {
-	flsModules.inputmask = Inputmask("+7 999 999 99 99").mask(inputMasks);
+	flsModules.inputmask = Inputmask("+7  999 999 99 99", {showMaskOnHover: false}).mask(inputMasks);
 }

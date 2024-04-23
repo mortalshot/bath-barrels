@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"О компании"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+         <section id="template13" class="template13">
+            <div class="template13__container">
+               <div class="template13__row">
+                  <div class="template13__body">
+                     <div class="template13__heading _content">
+                        <h1>О компании</h1>
+                     </div>
+                     <div class="template13__text _content">
+                        <h4>За счет собственного производства не устанавливаем высокиенеобоснованные цены, поскольку работаем напрямую безпосредников. Весь процесс мы отслеживаем сами.</h4>
+                     </div>
+                  </div>
+                  <div class="template13__image"><img src="@img/home/template11.jpg" alt="" loading="lazy"></div>
+               </div>
+            </div>
+         </section>
+
+         <section id="delivery" class="delivery">
+            <div class="delivery__container">
+               <div class="delivery__heading _content">
+                  <h2>доставка и оплата</h2>
+               </div>
+
+               <div class="delivery__card payment">
+                  <h3 class="delivery__caption">Оплата</h3>
+
+                  <div class="payment__body">
+                     <div class="payment__text _content">
+                        <p>Оплата изделий осуществляется на основании договора. Оплата возможна наличными, банковской картой (не во всех точках продаж) или безналичным расчетом.</p>
+                        <p>Оплата осуществляется в два этапа: предоплата 50%, вторые 50% оплачиваются за неделю до установленной даты отгрузки.</p>
+                     </div>
+
+                     <div class="payment__contacts contact-steps">
+                        <a href="tel:+7 914 171 78 32" class="contact-steps__item"><span>+7 914 171 78 32</span></a>
+                        <a href="" class="contact-steps__item"><i class="_icon-telegram"></i></a>
+                        <a href="" class="contact-steps__item"><i class="_icon-whatsapp"></i></a>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="delivery__card">
+                  <h3 class="delivery__caption">доставка</h3>
+
+                  <div class="delivery__items">
+                     <div class="delivery__item delivery-item">
+                        <div class="delivery-item__image"><img src="@img/home/delivery-1.svg" alt="" loading="lazy"></div>
+                        <div class="delivery-item__footer">
+                           <div class="delivery-item__name">Доставка Хабаровск и ближний пригород</div>
+                           <div class="delivery-item__price title-h4">1 000 ₽</div>
+                        </div>
+                     </div>
+                     <div class="delivery__item delivery-item">
+                        <div class="delivery-item__image"><img src="@img/home/delivery-2.svg" alt="" loading="lazy"></div>
+                        <div class="delivery-item__footer">
+                           <div class="delivery-item__name">Доставка за город</div>
+                           <div class="delivery-item__price title-h4">90 ₽/км</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('html/_footer.htm',{})
+   </div>
+   @@include('html/_popup.htm',{})
+   @@include('html/_js.htm',{})
+</body>
+
+</html>
